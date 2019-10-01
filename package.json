@@ -1,0 +1,25 @@
+{
+  "name": "heroku-mqtt-danica",
+  "version": "1.0.0",
+  "description": "Mqtt in heroku",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daynne1726/heroku-mqtt-danica.git"
+  },
+  "keywords": [
+    "mqtt"
+  ],
+  "author": "Danica Caballero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daynne1726/heroku-mqtt-danica/issues"
+  },
+  "homepage": "https://github.com/daynne1726/heroku-mqtt-danica#readme",
+  "engines": {
+    "node": "10.x"
+  }
+}

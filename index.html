@@ -1,0 +1,178 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+    
+  <title>mows</title>
+</head>
+<style>
+  legend{
+    background-color: pink;
+    color: black;
+  }
+
+  form{
+    background-color: #ffb8ee;
+    color: white;
+    border-radius: 5px;
+    border-color: white;
+    border: 5px solid white;
+  }
+
+  body{
+ background-color:  #ffd9f5;
+  }
+
+  button{
+    background-color: cyan;
+  }
+
+  table{
+    color:white;
+    background-color: pink
+  }
+
+  .ad{
+    font-size: 18px;
+  }
+
+  .jumbotron{     background-color: #ffb8ee;   
+  }
+
+  fieldset{
+    background-color: #ffb8ee;
+
+  }
+  th {
+    text-align: center;
+  }
+</style>
+<body>
+  
+  <div class="jumbotron text-center">
+      <h1>MQTT over Web Socket</h1>
+    </div>
+      
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4 div1">
+            <form  id = "form1" >
+                <div class="form-group">
+                <fieldset>
+                 <legend>Broker:</legend>
+                 <span class='ad'>Address:</span> 
+                 <br>
+                 <input class="form-control" id ='broker'
+                  value="wss://test.mosquitto.org:8081/mqtt"><br>
+                 <input id="connect" class="btn btn-primary" type="button" value="Connect">
+          <input id="disconnect" class="btn btn-primary" type="button" value="Disconnect" disabled><br><br>
+                 Status: <input id="status" class="btn btn-default" type="button" value="....................."
+            disabled><br>
+                 <br>
+                </fieldset>
+                </div>
+            </form>
+            <table class="table table-bordered data-table table1" id="receiver" >
+                <tbody>
+                <thead>
+                  <th>Topic</th>
+                  <th>Payload</th>
+                  <th>Time Stamp</th>
+                </thead>
+                </tbody>
+                <tbody id="msg">
+      
+              </tbody>
+              </table>
+            <div id="load">
+            </div>   
+        </div>
+        <div class="col-sm-4 div2">
+            <form  class="form-group" id = "form2">
+                <div class="form-group">
+                <fieldset>
+                 <legend>Publish:</legend>
+                 <span class ='ad'>Topic:</span>
+                 <br>
+                 <input class="form-control" id = 'Topic' name ='topic'type="text">                 
+                 <br>
+                 <span class ='ad'>Payload:</span>
+                 <br>
+                 <input class="form-control" id='Payload' name ='payload' type = 'text'>
+                 <br>
+                 <center><button class=' btn btn-primary' id="btn-publish" value="Publish">Publish</button></center>
+                 
+                </fieldset>
+                </div>
+            </form>
+            
+            <table class="table table-bordered data-table table2" id="publisher">
+                <tbody class='table1' >
+                <thead>
+                  <th>Topic</th>
+                  <th>Payload</th>
+                  <th>Time Stamp</th>
+                </thead>
+                </tbody>
+                <tbody id="pubmsg">
+      
+              </tbody>
+              </table>
+            
+        </div>
+        <div class="col-sm-4 div3">
+            <form  id = "form3">
+                <div class="form-group">
+                <fieldset>
+                 <legend>Subscribe:</legend>
+                 <span class ='ad'>Topic:</span>
+                 <br>
+                 <input id="subTopic" class="form-control" type="text" >
+                 <br>
+                 <button id="btn-Subscribe" class=' btn btn-primary' value="Subscribe">Subscribe</button>
+                 <button class=' btn btn-primary' id="btn-Unsubscribe" value="Unsubscribe">Unscubscribe</button>
+                <br><br>
+                </fieldset>
+                </div>
+            </form>
+            <table class="table table-bordered data-table table3" id="subscriber">
+                <tbody>
+                <thead>
+                  <th>Topic</th>
+                  <!-- <th>Payload</th> -->
+                  <th>Time Stamp</th>
+                </thead>
+                </tbody>
+                <tbody id="submsg">
+      
+              </tbody>
+              </table>
+
+
+            
+        </div>
+<!-- 
+        <table id="receiver" class="table  table-hover ">
+        <thead class="thead-dark">
+          <th>Topic</th>
+          <th>Payload</th>
+          <th>Time Stamp</th>
+        </thead>
+        <tbody id="msg">
+
+        </tbody>
+      </table>
+      <div class="row">
+
+      </div> -->
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+</body>
+
+<script src="/browserMqtt.js"></script>
+<script src="/controller.js"></script>
+</html>
