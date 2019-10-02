@@ -21,5 +21,8 @@
   "homepage": "https://github.com/daynne1726/heroku-mqtt-danica#readme",
   "engines": {
     "node": "10.x"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
